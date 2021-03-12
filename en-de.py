@@ -8,7 +8,7 @@ FiveX = 1
 EnDe = input('Encode or Decode? ')
 
 #Encode option
-if EnDe == "Encode":
+if EnDe.lower() == "encode":
    
     #User input and converting to "byte like object"
     EnInput = input('To be encoded: ')
@@ -33,7 +33,7 @@ if EnDe == "Encode":
 
 
 #Decode option
-elif EnDe == "Decode":
+elif EnDe.lower() == "decode":
 
     #User input and converting to "byte like object"
     DeInput = input("To be decoded: ")
@@ -54,6 +54,9 @@ elif EnDe == "Decode":
     #Print result
     print("Please excuse the b''")
     print(Decoded)
+
+#Quit option
+#elif EnDe == "Quit":
 
 
 #Invalid option
