@@ -27,8 +27,8 @@ if EnDe.lower() == "encode":
         
         EnInput = Encoded
    
-    #Print result
-    print("Please excuse the b''")
+    #Revert input to a string and print result
+    Encoded = Encoded.decode()
     print(Encoded)
 
 
@@ -51,8 +51,8 @@ elif EnDe.lower() == "decode":
         FiveX += 1
 
         DeInput = Decoded
-    #Print result
-    print("Please excuse the b''")
+    #Revert input into a string and print result
+    Decoded = Decoded.decode()
     print(Decoded)
 
 #Quit option
