@@ -1,5 +1,9 @@
 #Import
 from base64 import *
+import os
+
+#Clear the terminal window
+os.system('cls' if os.name == 'nt' else 'clear')
 
 #A surprise tool that will help us later
 FiveX = 1
