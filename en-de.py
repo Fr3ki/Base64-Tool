@@ -81,24 +81,24 @@ def FileDecode():
  ######################################################
 
 #Running encode
-if EnDe.lower() == "encode":
+if EnDe.lower() == "encode" or EnDe.lower() == "e":
      Encode()
 
-if EnDe.lower() == "encode -f":
+if EnDe.lower() == "encode -f" or EnDe.lower() == "e -f":
     FileEncode()
 
 #Running decode
-elif EnDe.lower() == "decode":
+elif EnDe.lower() == "decode" or EnDe.lower() =="d":
     Decode()
 
-elif EnDe.lower() == "decode -f":
+elif EnDe.lower() == "decode -f" or EnDe.lower() == "d -f":
     FileDecode()
 
 #Quit option
-elif EnDe.lower() == "quit":
+elif EnDe.lower() == "quit" or EnDe.lower() == "q": 
     pass
 
-elif EnDe.lower() == "help":
+elif EnDe.lower() == "help" or EnDe.lower() == "h":
     print("Base64 Multitool by Fr3ki \n Encode: Convert text to base64 (-f File mode) \n Decode: Decode Base64 into plain text (-f File mode) \n --For more information check ReadMe.md-- ")
 
 #Invalid option
