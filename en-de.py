@@ -82,13 +82,13 @@ def FileDecode():
 
 #Running encode
 if EnDe.lower() == "encode" or EnDe.lower() == "e":
-     Encode()
+    Encode()
 
 if EnDe.lower() == "encode -f" or EnDe.lower() == "e -f":
     FileEncode()
 
 #Running decode
-elif EnDe.lower() == "decode" or EnDe.lower() =="d":
+elif EnDe.lower() == "decode" or EnDe.lower() == "d":
     Decode()
 
 elif EnDe.lower() == "decode -f" or EnDe.lower() == "d -f":
