@@ -1,13 +1,11 @@
+#!/usr/bin/env python3
+
 #Import
 from base64 import *
+import sys
 import os
 
-#Clear the terminal
-os.system('clear')
-
-#Picking a tool
-EnDe = input('[Encode, Decode, Help, Quit]: ')
-
+#Functions
 ###########################################################
 
 #Encode function
@@ -31,7 +29,6 @@ def Encode():
 
     #Revert input to a string and print result
     Output = Encoded.decode()
-    os.system('clear')
     print(Output)
 
 #Decode function
@@ -55,7 +52,6 @@ def Decode():
         DeInput = Decoded
     #Revert input into a string and print result
     Decoded = Decoded.decode()
-    os.system('clear')
     print(Decoded)
 
 def FileEncode():
@@ -80,27 +76,37 @@ def FileDecode():
 
  ######################################################
 
-#Running encode
-if EnDe.lower() == "encode" or EnDe.lower() == "e":
-    Encode()
+#Selecting a Tool
+if len(sys.argv) == 2:
 
-if EnDe.lower() == "encode -f" or EnDe.lower() == "e -f":
-    FileEncode()
+    Input = sys.argv[1].lower()
+
+#Running encode
+    if Input == "encode" or Input == "e":
+        Encode()
 
 #Running decode
-elif EnDe.lower() == "decode" or EnDe.lower() == "d":
-    Decode()
+    elif Input == "decode" or Input == "d":
+        Decode()
+    
+#Running help
+    elif Input == "help" or Input == "h":
+        print("Base64 Multitool by Fr3ki \n Encode: Convert text to base64 (-f File mode) \n Decode: Decode Base64 into plain text (-f File mode) \n --For more information check ReadMe.md-- ")
 
-elif EnDe.lower() == "decode -f" or EnDe.lower() == "d -f":
-    FileDecode()
 
-#Quit option
-elif EnDe.lower() == "quit" or EnDe.lower() == "q": 
-    pass
+elif len(sys.argv) == 3:
 
-elif EnDe.lower() == "help" or EnDe.lower() == "h":
+    Input = sys.argv[1].lower()
+
+#File encode
+    if Input == "encode" and sys.argv[2].lower() == "-f" or Input == "e" and sys.argv[2].lower() == "-f":
+        FileEncode()
+
+#File decode
+    elif EnDe.lower() == Input == "decode" and sys.argv[2] == "-f" or Input == "d" and sys.argv[2] == "-f":
+        FileDecode()
+
+#No input runs help
+else:
     print("Base64 Multitool by Fr3ki \n Encode: Convert text to base64 (-f File mode) \n Decode: Decode Base64 into plain text (-f File mode) \n --For more information check ReadMe.md-- ")
 
-#Invalid option
-else:
-    print("Enter A Valid Option")
